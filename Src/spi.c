@@ -4,7 +4,7 @@
 
  alternate funtion mapping -> Data sheet
 
- PA3 -> RST , OUTPUT PIN
+ PA8 -> RST , OUTPUT PIN
  PA6 -> DC , OUTPUT PIN
  PA7 -> MOSI , AF
  PA5 -> SCK , AF
@@ -44,8 +44,8 @@ void spi_gpio_Init(void){
 	GPIOA->MODER |= (2U << (7*2));
 
 	//set PA3 as an OUTPUT Pin
-	GPIOA->MODER &= ~(3U << (3*2));
-	GPIOA->MODER |= (1U << (3*2));
+	GPIOA->MODER &= ~(3U << (8*2));
+	GPIOA->MODER |= (1U << (8*2));
 
 	//set PA6 as an OUTPUT Pin
 	GPIOA->MODER &= ~(3U << (6*2));

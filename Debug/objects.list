@@ -1,0 +1,7 @@
+"./Src/main.o"
+"./Src/spi.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Src/tft.o"
+"./Src/timer.o"
+"./Startup/startup_stm32f401retx.o"

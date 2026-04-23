@@ -1,0 +1,5 @@
+../Src/tft.c:25:6:tft_write_cmd	1
+../Src/tft.c:34:6:tft_write_data	1
+../Src/tft.c:44:6:tft_reset	1
+../Src/tft.c:53:6:tft_Init	1
+../Src/tft.c:68:6:tft_test1	2
