@@ -18,10 +18,25 @@
 #define RASET 		0x2B  // Zeilenbereich setzen
 #define RAMWR		0x2C  // Pixel schreiben
 
+#define TFT_WIDTH   132   // 132 Pixel breit (Spalten)
+#define TFT_HEIGHT  162   // 162 Pixel hoch (Zeilen)
+
+#define TFT_BLACK   0x0000
+#define TFT_WHITE   0xFFFF
+#define TFT_RED     0xF800
+#define TFT_GREEN   0x07E0
+#define TFT_BLUE    0x001F
+#define TFT_YELLOW  0xFFE0
+
+
 void tft_write_cmd(uint8_t cmd);
 void tft_write_data(uint8_t data);
 void tft_reset(void);
 void tft_Init(void);
+
+void tft_set_window(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
+void tft_draw_char(uint16_t x, uint16_t y, char ch, uint16_t fg, uint16_t bg);
+void tft_draw_string(uint16_t x, uint16_t y, const char *str, uint16_t fg, uint16_t bg);
 
 
 #endif /* TFT_H_ */

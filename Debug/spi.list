@@ -575,8 +575,8 @@ void tft_Init(){
     tft_write_cmd(MADCTL);
  80004c4:	2036      	movs	r0, #54	@ 0x36
  80004c6:	f7ff ffa3 	bl	8000410 <tft_write_cmd>
-    tft_write_data(0x08);    // BGR Modus, alle anderen Bits werden überschrieben aber ok , weil nicht gebraucht werden
- 80004ca:	2008      	movs	r0, #8
+    tft_write_data(0x00);    // BGR Modus, alle anderen Bits werden überschrieben aber ok , weil nicht gebraucht werden
+ 80004ca:	2000      	movs	r0, #0
  80004cc:	f7ff ffb8 	bl	8000440 <tft_write_data>
     tft_write_cmd(DISPON);
  80004d0:	2029      	movs	r0, #41	@ 0x29
@@ -633,11 +633,11 @@ void tft_test1(void) {
  8000528:	2300      	movs	r3, #0
  800052a:	607b      	str	r3, [r7, #4]
  800052c:	e008      	b.n	8000540 <tft_test1+0x60>
-        tft_write_data(0x07);  // Rot High
- 800052e:	2007      	movs	r0, #7
+        tft_write_data(0x00);  // Rot High
+ 800052e:	2000      	movs	r0, #0
  8000530:	f7ff ff86 	bl	8000440 <tft_write_data>
-        tft_write_data(0x00);  // Rot Low
- 8000534:	2000      	movs	r0, #0
+        tft_write_data(0x1F);  // Rot Low
+ 8000534:	201f      	movs	r0, #31
  8000536:	f7ff ff83 	bl	8000440 <tft_write_data>
     for(uint32_t i = 0; i < 132 * 162; i++) {
  800053a:	687b      	ldr	r3, [r7, #4]

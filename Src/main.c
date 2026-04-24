@@ -8,5 +8,10 @@ int main(void) {
         tft_test1();     // Rot
         delay_ms(2000);
 
+        void tft_test2(){
+        	tft_set_window(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
+
+        }
+
     }
 }
