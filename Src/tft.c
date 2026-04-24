@@ -68,7 +68,7 @@ void tft_Init(){
     tft_write_cmd(COLMOD);
     tft_write_data(0x05);    // s150, 16-bit RGB565
     tft_write_cmd(MADCTL);
-    tft_write_data(0x00);    // BGR Modus, alle anderen Bits werden überschrieben aber ok , weil nicht gebraucht werden
+    tft_write_data(0xC0);    // BGR Modus, alle anderen Bits werden überschrieben aber ok , weil nicht gebraucht werden
     tft_write_cmd(DISPON);
     delay_ms(100);
 }

@@ -8,11 +8,10 @@ int main(void) {
     spi1_config();
     tft_Init();
 
+    tft_testFullScreenColor(TFT_BLACK);
+    tft_draw_string(0, 0, "HALLO MOREL!", TFT_WHITE,TFT_BLACK);
+
     while(1) {
 
-    	tft_testFullScreenColor(TFT_YELLOW);
-    	delay_ms(2000);
-
-        }
-
+    }
 }
