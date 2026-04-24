@@ -31,12 +31,15 @@
 
 void tft_write_cmd(uint8_t cmd);
 void tft_write_data(uint8_t data);
+void tft_write_data16(uint16_t data);
 void tft_reset(void);
 void tft_Init(void);
 
 void tft_set_window(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
 void tft_draw_char(uint16_t x, uint16_t y, char ch, uint16_t fg, uint16_t bg);
 void tft_draw_string(uint16_t x, uint16_t y, const char *str, uint16_t fg, uint16_t bg);
+
+void tft_testFullScreenColor(uint16_t color);
 
 
 #endif /* TFT_H_ */

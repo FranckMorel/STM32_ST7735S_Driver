@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/font.c \
 ../Src/main.c \
 ../Src/spi.c \
 ../Src/syscalls.c \
@@ -13,6 +14,7 @@ C_SRCS += \
 ../Src/timer.c 
 
 OBJS += \
+./Src/font.o \
 ./Src/main.o \
 ./Src/spi.o \
 ./Src/syscalls.o \
@@ -21,6 +23,7 @@ OBJS += \
 ./Src/timer.o 
 
 C_DEPS += \
+./Src/font.d \
 ./Src/main.d \
 ./Src/spi.d \
 ./Src/syscalls.d \
@@ -36,7 +39,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/spi.cyclo ./Src/spi.d ./Src/spi.o ./Src/spi.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/tft.cyclo ./Src/tft.d ./Src/tft.o ./Src/tft.su ./Src/timer.cyclo ./Src/timer.d ./Src/timer.o ./Src/timer.su
+	-$(RM) ./Src/font.cyclo ./Src/font.d ./Src/font.o ./Src/font.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/spi.cyclo ./Src/spi.d ./Src/spi.o ./Src/spi.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su ./Src/tft.cyclo ./Src/tft.d ./Src/tft.o ./Src/tft.su ./Src/timer.cyclo ./Src/timer.d ./Src/timer.o ./Src/timer.su
 
 .PHONY: clean-Src
 

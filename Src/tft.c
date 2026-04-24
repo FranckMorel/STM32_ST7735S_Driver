@@ -8,7 +8,7 @@
 #include "tft.h"
 #include "spi.h"
 #include "timer.h"
-
+#include "font.h"
 
 #define DC_PIN     	6
 #define CS_PIN     	9
@@ -40,6 +40,14 @@ void tft_write_data(uint8_t data){
 
 }
 
+
+void tft_write_data16(uint16_t data){
+    uint8_t high = (data >> 8); 	 // obere 8 Bit (z.B. 0xF8)
+    uint8_t low  = (data & 0xFF);    // untere 8 Bit (z.B. 0x00)
+    tft_write_data(high);
+    tft_write_data(low);
+}
+
 // s93 -> ST7735S Datasheet v1.1: RST muss mindestens 10us LOW sein
 void tft_reset(void){
 
@@ -65,10 +73,12 @@ void tft_Init(){
     delay_ms(100);
 }
 
+
+/*
 void tft_test1(void) {
-    /*Daten werden als 16 Bits Werte geschrieben, also in 8Bits Paare aufgespittet
-      s128,s130 : CASET und RASET definieren den Schreibbereich
-     */
+     // Daten werden als 16 Bits Werte geschrieben, also in 8Bits Paare aufgespittet
+     // s128,s130 : CASET und RASET definieren den Schreibbereich
+
     tft_write_cmd(CASET);
     tft_write_data(0x00); tft_write_data(0x00); // Start bei 0
     tft_write_data(0x00); tft_write_data(0x83); // Ende bei 131
@@ -84,13 +94,14 @@ void tft_test1(void) {
         tft_write_data(0x1F);  // Rot Low
     }
 }
+*/
 
 
 void tft_set_window(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2) {
     tft_write_cmd(CASET);
     // Koordinaten in 8 Bits Paare aufgesplittet:
-    tft_write_data(x1 >> 8); tft_write_data(x1 & 0xFF); // HIGH Byte
-    tft_write_data(x2 >> 8); tft_write_data(x2 & 0xFF); // LOW Byte
+    tft_write_data(x1 >> 8); tft_write_data(x1 & 0xFF);
+    tft_write_data(x2 >> 8); tft_write_data(x2 & 0xFF);
 
     tft_write_cmd(RASET);
     tft_write_data(y1 >> 8); tft_write_data(y1 & 0xFF);
@@ -136,3 +147,17 @@ void tft_draw_string(uint16_t x, uint16_t y, const char *str, uint16_t fg, uint1
         str++;
     }
 }
+
+
+void tft_testFullScreenColor(uint16_t color){
+
+	tft_set_window(0,0,131,161);
+
+	for(uint32_t i = 0; i < 132 * 162; i++) {
+
+		tft_write_data16(color);
+
+	    }
+}
+
+

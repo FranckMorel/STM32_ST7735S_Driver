@@ -1,3 +1,4 @@
+"./Src/font.o"
 "./Src/main.o"
 "./Src/spi.o"
 "./Src/syscalls.o"

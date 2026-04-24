@@ -1,5 +1,9 @@
 ../Src/tft.c:25:6:tft_write_cmd	16	static
 ../Src/tft.c:34:6:tft_write_data	16	static
-../Src/tft.c:44:6:tft_reset	8	static
-../Src/tft.c:53:6:tft_Init	8	static
-../Src/tft.c:68:6:tft_test1	16	static
+../Src/tft.c:44:6:tft_write_data16	24	static
+../Src/tft.c:52:6:tft_reset	8	static
+../Src/tft.c:61:6:tft_Init	8	static
+../Src/tft.c:100:6:tft_set_window	24	static
+../Src/tft.c:120:6:tft_draw_char	40	static
+../Src/tft.c:139:6:tft_draw_string	40	static
+../Src/tft.c:152:6:tft_testFullScreenColor	24	static
