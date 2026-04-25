@@ -4,7 +4,7 @@
  *  Created on: Apr 23, 2026
  *      Author: Morel
  */
-#include <stm32f401xe.h>
+#include "stm32f401xe.h"
 #include "tft.h"
 #include "spi.h"
 #include "timer.h"
@@ -19,6 +19,7 @@
 
 #define RST_HIGH()	(GPIOA -> BSRR = (1U<<8))
 #define RST_LOW()	(GPIOA -> BSRR = (1U<<(RST_PIN + 16)))
+
 
 
 // s24 -> ST7735S Datasheet v1.1: DC LOW for cmd and DC HIGH for data
@@ -42,8 +43,8 @@ void tft_write_data(uint8_t data){
 
 
 void tft_write_data16(uint16_t data){
-    uint8_t high = (data >> 8); 	 // obere 8 Bit (z.B. 0xF8)
-    uint8_t low  = (data & 0xFF);    // untere 8 Bit (z.B. 0x00)
+    uint8_t high = (data >> 8); 	 // obere 8 Bits (z.B. 0xF8)
+    uint8_t low  = (data & 0xFF);    // untere 8 Bits (z.B. 0x00)
     tft_write_data(high);
     tft_write_data(low);
 }
@@ -110,7 +111,7 @@ void tft_set_window(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2) {
     tft_write_cmd(RAMWR);
 }
 
-/* Zeichen zeichnen
+/* Zeichen zeichnen:
    @param x, y: Position (oben links)
    @param ch: ASCII Zeichen (32-127)
    @param fg: Vordergrundfarbe (das Zeichen selbst)
@@ -118,7 +119,7 @@ void tft_set_window(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2) {
  */
 
 void tft_draw_char(uint16_t x, uint16_t y, char ch, uint16_t fg, uint16_t bg) {
-    if(ch < 32 || ch > 127) return; // unguetige Zeichen filtern
+    if(ch < 32 || ch > 127) return; // ungueltige Zeichen filtern
 
     const uint8_t *data = &Font8x16[ch - 32][0];
     tft_set_window(x, y, x + 7, y + 15); // Ein Zeichen ist 8Pixel breit und 16Pixel hoch
@@ -159,5 +160,8 @@ void tft_testFullScreenColor(uint16_t color){
 
 	    }
 }
+
+
+
 
 

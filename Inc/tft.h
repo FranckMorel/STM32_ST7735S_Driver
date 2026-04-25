@@ -5,8 +5,11 @@
  *      Author: Morel
  */
 
+#include <stdint.h>
+
 #ifndef TFT_H_
 #define TFT_H_
+
 
 // ab s104 -> ST7735S Datasheet v1.1: COMMANDOS
 #define SWRESET		0x01  // Reset zum Start
@@ -40,6 +43,6 @@ void tft_draw_char(uint16_t x, uint16_t y, char ch, uint16_t fg, uint16_t bg);
 void tft_draw_string(uint16_t x, uint16_t y, const char *str, uint16_t fg, uint16_t bg);
 
 void tft_testFullScreenColor(uint16_t color);
-
+void draw_menu();
 
 #endif /* TFT_H_ */
