@@ -351,7 +351,7 @@ Discarded input sections
  .debug_macro   0x00000000     0x102d ./Src/tft.o
  .debug_macro   0x00000000      0x11f ./Src/tft.o
  .debug_macro   0x00000000     0xb850 ./Src/tft.o
- .debug_macro   0x00000000       0x6a ./Src/tft.o
+ .debug_macro   0x00000000       0x94 ./Src/tft.o
  .group         0x00000000        0xc ./Src/timer.o
  .group         0x00000000        0xc ./Src/timer.o
  .group         0x00000000        0xc ./Src/timer.o
@@ -401,7 +401,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./Src/ui.o
  .debug_macro   0x00000000       0x6a ./Src/ui.o
  .debug_macro   0x00000000      0x1df ./Src/ui.o
- .debug_macro   0x00000000       0x6a ./Src/ui.o
+ .debug_macro   0x00000000       0x94 ./Src/ui.o
  .text          0x00000000       0x14 ./Startup/startup_stm32f401retx.o
  .data          0x00000000        0x0 ./Startup/startup_stm32f401retx.o
  .bss           0x00000000        0x0 ./Startup/startup_stm32f401retx.o
@@ -975,23 +975,23 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x00000000      0xedf
+.debug_info     0x00000000      0xed8
  .debug_info    0x00000000       0xbb ./Src/font.o
- .debug_info    0x000000bb       0xb1 ./Src/main.o
- .debug_info    0x0000016c      0x430 ./Src/spi.o
- .debug_info    0x0000059c      0x3f5 ./Src/tft.o
- .debug_info    0x00000991      0x39e ./Src/timer.o
- .debug_info    0x00000d2f      0x180 ./Src/ui.o
- .debug_info    0x00000eaf       0x30 ./Startup/startup_stm32f401retx.o
+ .debug_info    0x000000bb       0xaa ./Src/main.o
+ .debug_info    0x00000165      0x430 ./Src/spi.o
+ .debug_info    0x00000595      0x3f5 ./Src/tft.o
+ .debug_info    0x0000098a      0x39e ./Src/timer.o
+ .debug_info    0x00000d28      0x180 ./Src/ui.o
+ .debug_info    0x00000ea8       0x30 ./Startup/startup_stm32f401retx.o
 
-.debug_abbrev   0x00000000      0x578
+.debug_abbrev   0x00000000      0x560
  .debug_abbrev  0x00000000       0x72 ./Src/font.o
- .debug_abbrev  0x00000072       0x73 ./Src/main.o
- .debug_abbrev  0x000000e5      0x111 ./Src/spi.o
- .debug_abbrev  0x000001f6      0x190 ./Src/tft.o
- .debug_abbrev  0x00000386       0xfb ./Src/timer.o
- .debug_abbrev  0x00000481       0xd3 ./Src/ui.o
- .debug_abbrev  0x00000554       0x24 ./Startup/startup_stm32f401retx.o
+ .debug_abbrev  0x00000072       0x5b ./Src/main.o
+ .debug_abbrev  0x000000cd      0x111 ./Src/spi.o
+ .debug_abbrev  0x000001de      0x190 ./Src/tft.o
+ .debug_abbrev  0x0000036e       0xfb ./Src/timer.o
+ .debug_abbrev  0x00000469       0xd3 ./Src/ui.o
+ .debug_abbrev  0x0000053c       0x24 ./Startup/startup_stm32f401retx.o
 
 .debug_aranges  0x00000000      0x150
  .debug_aranges
@@ -1009,7 +1009,7 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_aranges
                 0x00000128       0x28 ./Startup/startup_stm32f401retx.o
 
-.debug_macro    0x00000000     0xdefb
+.debug_macro    0x00000000     0xdf05
  .debug_macro   0x00000000       0x71 ./Src/font.o
  .debug_macro   0x00000071      0xac0 ./Src/font.o
  .debug_macro   0x00000b31       0x22 ./Src/font.o
@@ -1018,42 +1018,42 @@ LOAD C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x00000c32      0x103 ./Src/font.o
  .debug_macro   0x00000d35       0x6a ./Src/font.o
  .debug_macro   0x00000d9f      0x1df ./Src/font.o
- .debug_macro   0x00000f7e       0xdc ./Src/main.o
- .debug_macro   0x0000105a       0x6a ./Src/main.o
- .debug_macro   0x000010c4       0x28 ./Src/main.o
- .debug_macro   0x000010ec       0x1c ./Src/main.o
- .debug_macro   0x00001108       0x22 ./Src/main.o
- .debug_macro   0x0000112a       0xd9 ./Src/main.o
- .debug_macro   0x00001203     0x102d ./Src/main.o
- .debug_macro   0x00002230      0x11f ./Src/main.o
- .debug_macro   0x0000234f     0xb850 ./Src/main.o
- .debug_macro   0x0000db9f      0x113 ./Src/spi.o
- .debug_macro   0x0000dcb2      0x114 ./Src/tft.o
- .debug_macro   0x0000ddc6       0xbf ./Src/timer.o
- .debug_macro   0x0000de85       0x76 ./Src/ui.o
+ .debug_macro   0x00000f7e       0xe6 ./Src/main.o
+ .debug_macro   0x00001064       0x94 ./Src/main.o
+ .debug_macro   0x000010f8       0x28 ./Src/main.o
+ .debug_macro   0x00001120       0x1c ./Src/main.o
+ .debug_macro   0x0000113c       0x22 ./Src/main.o
+ .debug_macro   0x0000115e       0xd9 ./Src/main.o
+ .debug_macro   0x00001237     0x102d ./Src/main.o
+ .debug_macro   0x00002264      0x11f ./Src/main.o
+ .debug_macro   0x00002383     0xb850 ./Src/main.o
+ .debug_macro   0x0000dbd3      0x113 ./Src/spi.o
+ .debug_macro   0x0000dce6       0xea ./Src/tft.o
+ .debug_macro   0x0000ddd0       0xbf ./Src/timer.o
+ .debug_macro   0x0000de8f       0x76 ./Src/ui.o
 
-.debug_line     0x00000000     0x22a2
+.debug_line     0x00000000     0x22aa
  .debug_line    0x00000000      0x406 ./Src/font.o
- .debug_line    0x00000406      0x59a ./Src/main.o
- .debug_line    0x000009a0      0x738 ./Src/spi.o
- .debug_line    0x000010d8      0x71a ./Src/tft.o
- .debug_line    0x000017f2      0x5de ./Src/timer.o
- .debug_line    0x00001dd0      0x457 ./Src/ui.o
- .debug_line    0x00002227       0x7b ./Startup/startup_stm32f401retx.o
+ .debug_line    0x00000406      0x5a2 ./Src/main.o
+ .debug_line    0x000009a8      0x738 ./Src/spi.o
+ .debug_line    0x000010e0      0x71a ./Src/tft.o
+ .debug_line    0x000017fa      0x5de ./Src/timer.o
+ .debug_line    0x00001dd8      0x457 ./Src/ui.o
+ .debug_line    0x0000222f       0x7b ./Startup/startup_stm32f401retx.o
 
 .debug_str      0x00000000    0x4f226
  .debug_str     0x00000000     0x3bdb ./Src/font.o
                                0x3d3e (size before relaxing)
- .debug_str     0x00003bdb    0x4b137 ./Src/main.o
-                              0x4ee43 (size before relaxing)
- .debug_str     0x0004ed12      0x28a ./Src/spi.o
+ .debug_str     0x00003bdb    0x4b203 ./Src/main.o
+                              0x4ef0f (size before relaxing)
+ .debug_str     0x0004edde      0x28a ./Src/spi.o
                               0x4efd1 (size before relaxing)
- .debug_str     0x0004ef9c      0x177 ./Src/tft.o
+ .debug_str     0x0004f068       0xb2 ./Src/tft.o
                               0x4f014 (size before relaxing)
- .debug_str     0x0004f113       0x5e ./Src/timer.o
+ .debug_str     0x0004f11a       0x5e ./Src/timer.o
                               0x4ee93 (size before relaxing)
- .debug_str     0x0004f171       0x2b ./Src/ui.o
-                               0x3e8a (size before relaxing)
+ .debug_str     0x0004f178       0x24 ./Src/ui.o
+                               0x3f4f (size before relaxing)
  .debug_str     0x0004f19c       0x8a ./Startup/startup_stm32f401retx.o
 
 .comment        0x00000000       0x43

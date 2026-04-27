@@ -1,6 +1,7 @@
 #include "timer.h"
-#include "tft.h"
-#include "spi.h"
+#include "../../stepperMotor_control/Inc/spi.h"
+#include "../../stepperMotor_control/Inc/tft.h"
+#include "../../stepperMotor_control/Inc/ui.h"
 
 int main(void) {
     tim2_Init();

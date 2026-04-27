@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00002010  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00000edf  00000000  00000000  00002040  2**0
+ 12 .debug_info   00000ed8  00000000  00000000  00002040  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00000578  00000000  00000000  00002f1f  2**0
+ 13 .debug_abbrev 00000560  00000000  00000000  00002f18  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000150  00000000  00000000  00003498  2**3
+ 14 .debug_aranges 00000150  00000000  00000000  00003478  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_macro  0000defb  00000000  00000000  000035e8  2**0
+ 15 .debug_macro  0000df05  00000000  00000000  000035c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_line   000022a2  00000000  00000000  000114e3  2**0
+ 16 .debug_line   000022aa  00000000  00000000  000114cd  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_str    0004f226  00000000  00000000  00013785  2**0
+ 17 .debug_str    0004f226  00000000  00000000  00013777  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .comment      00000043  00000000  00000000  000629ab  2**0
+ 18 .comment      00000043  00000000  00000000  0006299d  2**0
                   CONTENTS, READONLY
- 19 .debug_rnglists 000000d1  00000000  00000000  000629ee  2**0
+ 19 .debug_rnglists 000000d1  00000000  00000000  000629e0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00000318  00000000  00000000  00062ac0  2**2
+ 20 .debug_frame  00000318  00000000  00000000  00062ab4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006e  00000000  00000000  00062dd8  2**0
+ 21 .debug_line_str 0000006e  00000000  00000000  00062dcc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -82,6 +82,7 @@ Disassembly of section .text:
 #include "timer.h"
 #include "tft.h"
 #include "spi.h"
+#include "ui.h"
 
 int main(void) {
  80001d4:	b580      	push	{r7, lr}
@@ -459,8 +460,8 @@ void cs_disable(void){
  8000404:	40020000 	.word	0x40020000
 
 08000408 <tft_write_cmd>:
-#define RST_LOW()	(GPIOA -> BSRR = (1U<<(RST_PIN + 16)))
-
+#include "timer.h"
+#include "font.h"
 
 
 // s24 -> ST7735S Datasheet v1.1: DC LOW for cmd and DC HIGH for data
@@ -1065,7 +1066,7 @@ void draw_menu(void) {
  80007cc:	223e      	movs	r2, #62	@ 0x3e
  80007ce:	200a      	movs	r0, #10
  80007d0:	f7ff fee6 	bl	80005a0 <tft_draw_char>
-             color = TFT_YELLOW;  // Aktueller Eintrag gelb
+             color = TFT_YELLOW;
  80007d4:	f64f 73e0 	movw	r3, #65504	@ 0xffe0
  80007d8:	807b      	strh	r3, [r7, #2]
  80007da:	e010      	b.n	80007fe <draw_menu+0x82>
