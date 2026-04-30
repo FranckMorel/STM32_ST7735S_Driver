@@ -1,7 +1,6 @@
 #include "timer.h"
-#include "../../stepperMotor_control/Inc/spi.h"
-#include "../../stepperMotor_control/Inc/tft.h"
-#include "../../stepperMotor_control/Inc/ui.h"
+#include "spi.h"
+#include "tft.h"
 
 int main(void) {
     tim2_Init();
@@ -9,10 +8,8 @@ int main(void) {
     spi1_config();
     tft_Init();
 
-    //tft_testFullScreenColor(TFT_BLACK);
-    //tft_draw_string(0, 0, "HALLO MOREL!", TFT_WHITE,TFT_BLACK);
-    draw_menu();
-
+    tft_testFullScreenColor(TFT_BLACK);
+    tft_draw_string(0, 0, "HALLO MOREL!", TFT_WHITE,TFT_BLACK);
 
     while(1) {
 
